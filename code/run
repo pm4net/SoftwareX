@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 # Run unit tests
 dotnet test ./OCEL/OCEL.Tests/ -c Release -l "trx;LogFileName=../../../../results/OCEL/OCEL.trx"
