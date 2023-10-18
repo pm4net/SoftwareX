@@ -9,5 +9,8 @@ dotnet test ./serilog-sinks-ocel/Serilog.Sinks.OCEL.Tests/ -c Release -l "trx;Lo
 dotnet test ./serilog-enrichers-callerinfo/Serilog.Enrichers.CallerInfo.Tests/ -c Release -l "trx;LogFileName=../../../../results/serilog-enrichers-callerinfo/serilog-enrichers-callerinfo.trx"
 
 # Run benchmarks
+dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj --framework net7.0 --filter *
 
-# Build OCEL-CLI and StructuredLogExplorer as they do not have test suites
+# Try and build OCEL-CLI and StructuredLogExplorer as they do not have test suites
+dotnet build ./OCEL-CLI/CLI/ -c Release
+dotnet build ./StructuredLogExplorer/Client/ -c Release
