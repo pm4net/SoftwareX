@@ -1,0 +1,21 @@
+[submodule "code/OCEL"]
+	path = code/OCEL
+	url = https://github.com/pm4net/OCEL.git
+[submodule "code/OCEL-CLI"]
+	path = code/OCEL-CLI
+	url = https://github.com/pm4net/OCEL-CLI.git
+[submodule "code/pm4net"]
+	path = code/pm4net
+	url = https://github.com/pm4net/pm4net.git
+[submodule "code/serilog-sinks-ocel"]
+	path = code/serilog-sinks-ocel
+	url = https://github.com/pm4net/serilog-sinks-ocel.git
+[submodule "code/Benchmarks"]
+	path = code/Benchmarks
+	url = https://github.com/pm4net/Benchmarks.git
+[submodule "code/StructuredLogExplorer"]
+	path = code/StructuredLogExplorer
+	url = https://github.com/pm4net/StructuredLogExplorer.git
+[submodule "code/serilog-enrichers-callerinfo"]
+	path = code/serilog-enrichers-callerinfo
+	url = https://github.com/pm4net/serilog-enrichers-callerinfo.git
