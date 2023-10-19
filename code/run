@@ -12,7 +12,7 @@ dotnet test ./serilog-sinks-ocel/Serilog.Sinks.OCEL.Tests/ -c Release -l "trx;Lo
 dotnet test ./serilog-enrichers-callerinfo/Serilog.Enrichers.CallerInfo.Tests/ -c Release -l "trx;LogFileName=../../../../results/serilog-enrichers-callerinfo/serilog-enrichers-callerinfo.trx"
 
 # Run benchmarks
-dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj -c Release --framework net7.0 --filter Benchmarks*
+dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj -c Release --framework net7.0 --filter "Benchmarks*"
 
 # Build StructuredLogExplorer and publish app
 cd ./StructuredLogExplorer/Client/
