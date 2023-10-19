@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -ex
 
+# Build OCEL-CLI NuGet package ready to be installed as a .NET tool
+dotnet pack ./OCEL-CLI/CLI/ -c Release -o ../results/OCEL-CLI/
+
 # Run unit tests
 dotnet test ./OCEL/OCEL.Tests/ -c Release -l "trx;LogFileName=../../../../results/OCEL/OCEL.trx"
 dotnet test ./OCEL/OCEL.CSharp.Tests/ -c Release -l "trx;LogFileName=../../../../results/OCEL/OCEL-CSharp.trx"
@@ -11,9 +14,7 @@ dotnet test ./serilog-enrichers-callerinfo/Serilog.Enrichers.CallerInfo.Tests/ -
 # Run benchmarks
 dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj --framework net7.0 --filter *
 
-# Try and build OCEL-CLI and StructuredLogExplorer as they do not have test suites
-dotnet build ./OCEL-CLI/CLI/ -c Release
-
+# Build StructuredLogExplorer and publish app
 cd ./StructuredLogExplorer/Client/
-npm i
-dotnet build -c Release
+npm install
+dotnet publish -c Release -o ../../../results/StructuredLogExplorer
