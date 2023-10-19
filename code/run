@@ -13,4 +13,7 @@ dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj --framework net7.
 
 # Try and build OCEL-CLI and StructuredLogExplorer as they do not have test suites
 dotnet build ./OCEL-CLI/CLI/ -c Release
-dotnet build ./StructuredLogExplorer/Client/ -c Release
+
+cd ./StructuredLogExplorer/Client/
+npm i
+dotnet build -c Release
