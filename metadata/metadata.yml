@@ -1,2 +1,17 @@
 metadata_version: 1
 name: pm4net
+description: pm4net is a collection of software libraries and applications to enable
+  the fusion of Structured Log Analysis and Object-Centric Process Mining. It consists
+  of an implementation of the OCEL standard and related CLI, a Serilog sink and an
+  enricher to enable logging to OCEL files, a process mining library to enable process
+  discovery upon such log files, a web application to ingest, modify, and visualise
+  the log files from object-centric perspectives. And finally, a benchmarking suite
+  for testing of scalability.
+tags:
+- Process Mining
+- Log Analysis
+- Object-Centric Process Mining
+authors:
+- name: Johannes Mols
+  affiliations:
+  - name: Technical University of Denmark
