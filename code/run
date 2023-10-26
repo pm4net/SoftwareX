@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 set -ex
 
+# The below commands run the Benchmark project. Unfortunately, numerous issues with the BenchmarkDotNet library prevent the results from correctly being written to the results directory, so we disable it here.
+
+# Run benchmarks and move results files to proper results folder
+# cd ./Benchmarks/Benchmarks/Properties
+# dotnet run --project ../Benchmarks.csproj -c Release --framework net7.0
+# dotnet run --project ../Benchmarks.csproj -c Release --framework net7.0
+# dotnet run --project ../Benchmarks.csproj -c Release --framework net7.0
+# cd ../../../../results # Go to the results directory
+# cp -a ./results/. ./Benchmarks # Copy results files to Benchmarks folder
+# rm -r ./results # Delete results folder
+# mv ./*.log ./Benchmarks # Move any log files to Benchmarks folder
+# cd ../code # Return to standard directory
+
 # Build OCEL-CLI NuGet package ready to be installed as a .NET tool
 dotnet pack ./OCEL-CLI/CLI/ -c Release -o ../results/OCEL-CLI/
 
