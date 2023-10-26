@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchmarks.OcelBenchmarks-20230810-150348</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3208/22H2/2022Update)
+AMD Ryzen 9 5950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK 7.0.203
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  Job-JEHSTJ : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  Job-NLYTNZ : .NET Framework 4.8.1 (4.8.9167.0), X64 RyuJIT VectorSize=256
+</code></pre>
+<pre><code>InvocationCount=1  IterationCount=5  RunStrategy=Monitoring  
+UnrollFactor=1  WarmupCount=3  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>       Runtime</th><th>NoOfEvents</th><th>Format</th><th>     Mean</th><th>   Error</th><th> StdDev</th><th>   Median</th>
+</tr>
+</thead><tbody><tr><td>Serialize</td><td>.NET 7.0</td><td>1</td><td>JSON</td><td>40.44 &mu;s</td><td>15.351 &mu;s</td><td>3.987 &mu;s</td><td>40.40 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1</td><td>JSON</td><td>46.30 &mu;s</td><td>19.685 &mu;s</td><td>5.112 &mu;s</td><td>45.40 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>JSON</td><td>24.24 &mu;s</td><td>7.238 &mu;s</td><td>1.880 &mu;s</td><td>25.00 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>JSON</td><td>31.20 &mu;s</td><td>22.154 &mu;s</td><td>5.753 &mu;s</td><td>28.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>1</td><td>LiteDb</td><td>481.94 &mu;s</td><td>141.732 &mu;s</td><td>36.807 &mu;s</td><td>462.50 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1</td><td>LiteDb</td><td>187.26 &mu;s</td><td>202.717 &mu;s</td><td>52.645 &mu;s</td><td>167.90 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>LiteDb</td><td>302.30 &mu;s</td><td>126.810 &mu;s</td><td>32.932 &mu;s</td><td>295.00 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>LiteDb</td><td>131.20 &mu;s</td><td>108.664 &mu;s</td><td>28.220 &mu;s</td><td>142.70 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>1</td><td>XML</td><td>49.30 &mu;s</td><td>53.707 &mu;s</td><td>13.948 &mu;s</td><td>43.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1</td><td>XML</td><td>65.06 &mu;s</td><td>77.397 &mu;s</td><td>20.100 &mu;s</td><td>61.70 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>XML</td><td>33.34 &mu;s</td><td>9.147 &mu;s</td><td>2.375 &mu;s</td><td>32.20 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1</td><td>XML</td><td>41.98 &mu;s</td><td>49.514 &mu;s</td><td>12.859 &mu;s</td><td>34.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10</td><td>JSON</td><td>91.06 &mu;s</td><td>59.290 &mu;s</td><td>15.397 &mu;s</td><td>84.30 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10</td><td>JSON</td><td>116.68 &mu;s</td><td>70.604 &mu;s</td><td>18.336 &mu;s</td><td>111.70 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>JSON</td><td>56.70 &mu;s</td><td>44.297 &mu;s</td><td>11.504 &mu;s</td><td>50.80 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>JSON</td><td>62.28 &mu;s</td><td>13.699 &mu;s</td><td>3.558 &mu;s</td><td>63.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10</td><td>LiteDb</td><td>817.02 &mu;s</td><td>217.129 &mu;s</td><td>56.388 &mu;s</td><td>782.10 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10</td><td>LiteDb</td><td>227.74 &mu;s</td><td>89.844 &mu;s</td><td>23.332 &mu;s</td><td>216.00 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>LiteDb</td><td>569.52 &mu;s</td><td>243.851 &mu;s</td><td>63.327 &mu;s</td><td>584.50 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>LiteDb</td><td>170.76 &mu;s</td><td>84.219 &mu;s</td><td>21.871 &mu;s</td><td>163.20 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10</td><td>XML</td><td>97.58 &mu;s</td><td>15.176 &mu;s</td><td>3.941 &mu;s</td><td>98.30 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10</td><td>XML</td><td>135.58 &mu;s</td><td>124.939 &mu;s</td><td>32.446 &mu;s</td><td>112.30 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>XML</td><td>94.62 &mu;s</td><td>108.132 &mu;s</td><td>28.081 &mu;s</td><td>78.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10</td><td>XML</td><td>64.30 &mu;s</td><td>11.003 &mu;s</td><td>2.857 &mu;s</td><td>63.90 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100</td><td>JSON</td><td>560.04 &mu;s</td><td>269.053 &mu;s</td><td>69.872 &mu;s</td><td>540.20 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100</td><td>JSON</td><td>737.36 &mu;s</td><td>145.569 &mu;s</td><td>37.804 &mu;s</td><td>720.30 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>JSON</td><td>240.64 &mu;s</td><td>16.959 &mu;s</td><td>4.404 &mu;s</td><td>241.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>JSON</td><td>398.70 &mu;s</td><td>191.665 &mu;s</td><td>49.775 &mu;s</td><td>378.90 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100</td><td>LiteDb</td><td>4,935.72 &mu;s</td><td>2,580.636 &mu;s</td><td>670.183 &mu;s</td><td>4,499.80 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100</td><td>LiteDb</td><td>705.02 &mu;s</td><td>244.001 &mu;s</td><td>63.366 &mu;s</td><td>676.00 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>LiteDb</td><td>2,087.72 &mu;s</td><td>205.345 &mu;s</td><td>53.327 &mu;s</td><td>2,103.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>LiteDb</td><td>413.94 &mu;s</td><td>110.746 &mu;s</td><td>28.760 &mu;s</td><td>403.20 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100</td><td>XML</td><td>701.22 &mu;s</td><td>174.757 &mu;s</td><td>45.384 &mu;s</td><td>707.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100</td><td>XML</td><td>769.86 &mu;s</td><td>291.086 &mu;s</td><td>75.594 &mu;s</td><td>740.20 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>XML</td><td>480.18 &mu;s</td><td>323.555 &mu;s</td><td>84.026 &mu;s</td><td>435.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100</td><td>XML</td><td>392.68 &mu;s</td><td>76.283 &mu;s</td><td>19.810 &mu;s</td><td>390.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>1000</td><td>JSON</td><td>4,876.30 &mu;s</td><td>1,164.122 &mu;s</td><td>302.319 &mu;s</td><td>4,806.20 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1000</td><td>JSON</td><td>6,701.10 &mu;s</td><td>5,956.892 &mu;s</td><td>1,546.986 &mu;s</td><td>6,519.80 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>JSON</td><td>2,423.96 &mu;s</td><td>494.736 &mu;s</td><td>128.481 &mu;s</td><td>2,438.90 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>JSON</td><td>3,832.38 &mu;s</td><td>2,525.949 &mu;s</td><td>655.981 &mu;s</td><td>3,502.30 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>1000</td><td>LiteDb</td><td>39,207.20 &mu;s</td><td>57,201.294 &mu;s</td><td>14,854.994 &mu;s</td><td>48,280.30 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1000</td><td>LiteDb</td><td>4,419.42 &mu;s</td><td>3,727.239 &mu;s</td><td>967.952 &mu;s</td><td>4,329.40 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>LiteDb</td><td>22,603.66 &mu;s</td><td>2,201.913 &mu;s</td><td>571.830 &mu;s</td><td>22,701.10 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>LiteDb</td><td>3,115.06 &mu;s</td><td>210.553 &mu;s</td><td>54.680 &mu;s</td><td>3,099.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>1000</td><td>XML</td><td>5,800.64 &mu;s</td><td>915.950 &mu;s</td><td>237.869 &mu;s</td><td>5,817.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>1000</td><td>XML</td><td>6,942.40 &mu;s</td><td>5,417.215 &mu;s</td><td>1,406.834 &mu;s</td><td>6,558.10 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>XML</td><td>4,402.48 &mu;s</td><td>512.000 &mu;s</td><td>132.965 &mu;s</td><td>4,377.20 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>1000</td><td>XML</td><td>3,602.70 &mu;s</td><td>334.209 &mu;s</td><td>86.793 &mu;s</td><td>3,579.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10000</td><td>JSON</td><td>32,805.12 &mu;s</td><td>1,300.284 &mu;s</td><td>337.680 &mu;s</td><td>32,641.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10000</td><td>JSON</td><td>57,954.86 &mu;s</td><td>8,387.089 &mu;s</td><td>2,178.100 &mu;s</td><td>58,272.50 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>JSON</td><td>50,246.48 &mu;s</td><td>12,498.442 &mu;s</td><td>3,245.806 &mu;s</td><td>51,283.60 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>JSON</td><td>77,528.64 &mu;s</td><td>20,859.475 &mu;s</td><td>5,417.139 &mu;s</td><td>79,532.00 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10000</td><td>LiteDb</td><td>125,934.66 &mu;s</td><td>8,649.975 &mu;s</td><td>2,246.371 &mu;s</td><td>126,987.50 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10000</td><td>LiteDb</td><td>27,274.78 &mu;s</td><td>5,717.446 &mu;s</td><td>1,484.803 &mu;s</td><td>26,438.10 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>LiteDb</td><td>236,932.72 &mu;s</td><td>14,773.361 &mu;s</td><td>3,836.595 &mu;s</td><td>239,116.00 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>LiteDb</td><td>35,330.62 &mu;s</td><td>2,153.829 &mu;s</td><td>559.343 &mu;s</td><td>35,418.60 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>10000</td><td>XML</td><td>41,408.34 &mu;s</td><td>15,533.480 &mu;s</td><td>4,033.996 &mu;s</td><td>39,896.50 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>10000</td><td>XML</td><td>42,816.32 &mu;s</td><td>6,872.188 &mu;s</td><td>1,784.685 &mu;s</td><td>42,629.50 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>XML</td><td>62,222.96 &mu;s</td><td>5,300.787 &mu;s</td><td>1,376.597 &mu;s</td><td>61,917.90 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>10000</td><td>XML</td><td>47,759.38 &mu;s</td><td>15,695.756 &mu;s</td><td>4,076.138 &mu;s</td><td>46,538.80 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100000</td><td>JSON</td><td>721,729.52 &mu;s</td><td>38,029.834 &mu;s</td><td>9,876.227 &mu;s</td><td>724,515.80 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100000</td><td>JSON</td><td>673,019.12 &mu;s</td><td>39,478.856 &mu;s</td><td>10,252.533 &mu;s</td><td>670,707.20 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>JSON</td><td>824,851.28 &mu;s</td><td>49,663.327 &mu;s</td><td>12,897.408 &mu;s</td><td>822,274.30 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>JSON</td><td>890,463.24 &mu;s</td><td>171,678.405 &mu;s</td><td>44,584.336 &mu;s</td><td>879,123.50 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100000</td><td>LiteDb</td><td>1,572,702.52 &mu;s</td><td>103,571.793 &mu;s</td><td>26,897.266 &mu;s</td><td>1,580,182.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100000</td><td>LiteDb</td><td>307,406.90 &mu;s</td><td>16,449.266 &mu;s</td><td>4,271.822 &mu;s</td><td>306,420.50 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>LiteDb</td><td>2,941,947.26 &mu;s</td><td>313,052.808 &mu;s</td><td>81,298.820 &mu;s</td><td>2,903,117.70 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>LiteDb</td><td>402,045.12 &mu;s</td><td>71,085.034 &mu;s</td><td>18,460.558 &mu;s</td><td>394,036.40 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET 7.0</td><td>100000</td><td>XML</td><td>610,730.40 &mu;s</td><td>40,366.667 &mu;s</td><td>10,483.095 &mu;s</td><td>604,527.40 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET 7.0</td><td>100000</td><td>XML</td><td>483,612.92 &mu;s</td><td>54,382.667 &mu;s</td><td>14,123.006 &mu;s</td><td>484,366.10 &mu;s</td>
+</tr><tr><td>Serialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>XML</td><td>830,720.78 &mu;s</td><td>64,247.791 &mu;s</td><td>16,684.947 &mu;s</td><td>833,607.30 &mu;s</td>
+</tr><tr><td>Deserialize</td><td>.NET Framework 4.8.1</td><td>100000</td><td>XML</td><td>635,489.48 &mu;s</td><td>31,441.000 &mu;s</td><td>8,165.128 &mu;s</td><td>637,394.10 &mu;s</td>
+</tr></tbody></table>
+</body>
+</html>

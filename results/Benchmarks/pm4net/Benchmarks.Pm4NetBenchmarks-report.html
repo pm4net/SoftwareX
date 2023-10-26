@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchmarks.Pm4NetBenchmarks-20230817-132146</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3324/22H2/2022Update)
+AMD Ryzen 9 5950X, 1 CPU, 32 logical and 16 physical cores
+.NET SDK 7.0.203
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  Job-OQNLVQ : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>Runtime=.NET 7.0  InvocationCount=1  IterationCount=3  
+RunStrategy=Monitoring  UnrollFactor=1  WarmupCount=1  
+</code></pre>
+
+<table>
+<thead><tr><th> Method</th><th> OcelFile</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Median</th>
+</tr>
+</thead><tbody><tr><td>DiscoverOcDfg</td><td>github_pm4py</td><td>52.57 ms</td><td>67.35 ms</td><td>3.692 ms</td><td>53.75 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>o2c</td><td>5,058.90 ms</td><td>1,338.10 ms</td><td>73.346 ms</td><td>5,058.21 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>p2p</td><td>2,438.68 ms</td><td>1,478.98 ms</td><td>81.068 ms</td><td>2,477.29 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>recruiting</td><td>151.75 ms</td><td>1,030.79 ms</td><td>56.501 ms</td><td>121.16 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>running-example</td><td>1,284.33 ms</td><td>885.46 ms</td><td>48.535 ms</td><td>1,308.49 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>transfer_order</td><td>227.72 ms</td><td>200.25 ms</td><td>10.976 ms</td><td>221.41 ms</td>
+</tr><tr><td>DiscoverOcDfg</td><td>windows_events</td><td>2,918.42 ms</td><td>912.44 ms</td><td>50.014 ms</td><td>2,891.41 ms</td>
+</tr></tbody></table>
+</body>
+</html>
