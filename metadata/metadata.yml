@@ -1,5 +1,5 @@
 metadata_version: 1
-name: pm4net
+name: "pm4net: Structured Log Analysis using Object-Centric Process Mining techniques"
 description: pm4net is a collection of software libraries and applications to enable
   the fusion of Structured Log Analysis and Object-Centric Process Mining. It consists
   of an implementation of the OCEL standard and related CLI, a Serilog sink and an
