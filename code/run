@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 set -ex
 
+# Run benchmarks and move results files to proper results folder
+cd ./Benchmarks/Benchmarks/Properties
+dotnet run --project ../Benchmarks.csproj -c Release --framework net7.0 --filter "Benchmarks*"
+cd ../../../../results # Go to the results directory
+cp -a ./results/. ./Benchmarks # Copy results files to Benchmarks folder
+rm -r ./results # Delete results folder
+mv ./*.log ./Benchmarks # Move any log files to Benchmarks folder
+cd ../code # Return to standard directory
+
 # Build OCEL-CLI NuGet package ready to be installed as a .NET tool
 dotnet pack ./OCEL-CLI/CLI/ -c Release -o ../results/OCEL-CLI/
 
@@ -10,9 +19,6 @@ dotnet test ./OCEL/OCEL.CSharp.Tests/ -c Release -l "trx;LogFileName=../../../..
 dotnet test ./pm4net/pm4net.Tests/ -c Release -l "trx;LogFileName=../../../../results/pm4net/pm4net.trx"
 dotnet test ./serilog-sinks-ocel/Serilog.Sinks.OCEL.Tests/ -c Release -l "trx;LogFileName=../../../../results/serilog-sinks-ocel/serilog-sinks-ocel.trx"
 dotnet test ./serilog-enrichers-callerinfo/Serilog.Enrichers.CallerInfo.Tests/ -c Release -l "trx;LogFileName=../../../../results/serilog-enrichers-callerinfo/serilog-enrichers-callerinfo.trx"
-
-# Run benchmarks
-dotnet run --project ./Benchmarks/Benchmarks/Benchmarks.csproj -c Release --framework net7.0 --filter "Benchmarks*"
 
 # Build StructuredLogExplorer and publish app
 cd ./StructuredLogExplorer/Client/
